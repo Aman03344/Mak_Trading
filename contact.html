@@ -132,33 +132,38 @@
             <div class="col-lg-7 mb-5">
                 <div class="contact-form bg-light p-30">
                     <div id="success"></div>
-                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                        <div class="control-group">
-                            <input type="text" class="form-control" id="name" placeholder="Your Name"
-                                required="required" data-validation-required-message="Please enter your name" />
-                            <p class="help-block text-danger"></p>
+                    <form action="https://api.web3forms.com/submit" method="POST" class="p-4 bg-light rounded mx-auto" style="max-width: 500px;">
+                        <!-- Access Key for Web3Forms -->
+                        <input type="hidden" name="access_key" value="181ac548-3966-403d-93ce-80c713aa537e">
+                        
+                        <!-- Name Input -->
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required>
                         </div>
-                        <div class="control-group">
-                            <input type="email" class="form-control" id="email" placeholder="Your Email"
-                                required="required" data-validation-required-message="Please enter your email" />
-                            <p class="help-block text-danger"></p>
+                        
+                        <!-- Email Input -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>
                         </div>
-                        <div class="control-group">
-                            <input type="text" class="form-control" id="subject" placeholder="Subject"
-                                required="required" data-validation-required-message="Please enter a subject" />
-                            <p class="help-block text-danger"></p>
+                        
+                        <!-- Message Input -->
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea name="message" id="message" class="form-control" rows="5" placeholder="Write your message here" required></textarea>
                         </div>
-                        <div class="control-group">
-                            <textarea class="form-control" rows="8" id="message" placeholder="Message"
-                                required="required"
-                                data-validation-required-message="Please enter your message"></textarea>
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div>
-                            <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Send
-                                Message</button>
+                        
+                        <!-- Honeypot Spam Protection (Hidden) -->
+                        <input type="checkbox" name="botcheck" class="d-none">
+                        
+                        <!-- Submit Button -->
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-warning fw-bold py-2">Submit Form</button>
                         </div>
                     </form>
+                    
+                    
                 </div>
             </div>
             <div class="col-lg-5 mb-5">
